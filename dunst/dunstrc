@@ -1,0 +1,41 @@
+[global]
+    font = JetBrainsMono Nerd Font 10
+    background = "#282a36"
+    foreground = "#ffffff"
+    frame_color = "#ffffff"
+    force_xwayland = true
+    #transparency = 30
+    sort = true
+    #corner_radius = 25
+    origin = top-center
+    idle_threshold = 5
+    layer = top
+    show_age_threshold = -1
+    gap_size = 5
+    padding = 14
+    text_icon_padding = 16
+    notification_limit = 6
+    highlight = "#ffffff"
+
+[urgency_low]
+    background = "#282a36"
+    foreground = "#ffffff"
+    #frame_color = "#cba6f7"
+    frame_color = "#ffffff"
+    timeout = 10
+    default_icon = "/home/zuxroy/.local/share/icons/custom/bell-solid.svg"
+
+[urgency_normal]
+    background = "#282a36"
+    foreground = "#ffffff"
+    #frame_color = "#cba6f7"
+    frame_color = "#ffffff"
+    timeout = 10
+    default_icon = "/home/zuxroy/.local/share/icons/custom/notification_default.svg"
+
+[urgency_critical]
+    background = "#ff5555"
+    foreground = "#ffffff"
+    frame_color = "#ffffff"
+    timeout = 0
+    default_icon = "/home/zuxroy/.local/share/icons/custom/alert_default.svg"

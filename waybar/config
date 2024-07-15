@@ -1,0 +1,59 @@
+{
+    "layer": "top",
+    "height": 30,
+    "spacing": 5,
+    "margin-top": 5,
+    "margin-left": 5,
+    "margin-right": 5,
+    "margin-bottom": -2,
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-left": [
+        "memory",
+    ],
+    "modules-right": [
+		"tray",
+        "pulseaudio",
+        "network",
+        "battery",
+		"clock",
+	],
+    "memory": {
+        "interval": 30,
+        "format": "{used:0.1f} G | {total:0.1f} G"
+    },
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate"
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        "format": "{:%I:%M %p \t %a   %b   %d}"
+    },
+    "battery": {
+        "states": {
+            "warning": 19
+        },
+        "format": "{icon}  {capacity}%",
+        "format-icons": [ "󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹" ],
+        "format-charging": "󰂄  {capacity}% Charging",
+        "format-warning": "󰂃  {capacity}% Battery Low",
+    },
+    "network": {
+        "format-wifi": "󰤨  {essid}",
+        "format-disconnected": "󰤭",
+		"on-click": "hyprctl dispatch exec '[float]' 'kitty -e nmtui'"
+    },
+    "pulseaudio": {
+        "format": "{icon}  {volume}",
+        "format-muted": "󰖁",
+		"format-icons": {
+			"default": ["", "", "󰕾"]
+		},
+		"on-click": "hyprctl dispatch exec '[float]' 'pavucontrol'"
+	},
+}

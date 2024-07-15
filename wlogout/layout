@@ -1,0 +1,36 @@
+{
+    "label" : "lock",
+    "action" : "$HOME/.config/bspwm/scripts/power-menu.sh lock",
+    "text" : "Lock",
+    "keybind" : "l"
+}
+{
+    "label" : "hibernate",
+    "action" : "$HOME/.config/bspwm/scripts/power-menu.sh hibernate",
+    "text" : "Hibernate",
+    "keybind" : "h"
+}
+{
+    "label" : "logout",
+    "action" : "$HOME/.config/bspwm/scripts/power-menu.sh exit",
+    "text" : "Logout",
+    "keybind" : "e"
+}
+{
+    "label" : "shutdown",
+    "action" : "$HOME/.config/bspwm/scripts/power-menu.sh shutdown",
+    "text" : "Shutdown",
+    "keybind" : "s"
+}
+{
+    "label" : "suspend",
+    "action" : "$HOME/.config/bspwm/scripts/power-menu.sh suspend",
+    "text" : "Suspend",
+    "keybind" : "u"
+}
+{
+    "label" : "reboot",
+    "action" : "$HOME/.config/bspwm/scripts/power-menu.sh reboot",
+    "text" : "Reboot",
+    "keybind" : "r"
+}

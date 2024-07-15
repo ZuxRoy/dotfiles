@@ -1,0 +1,8 @@
+display_on=0
+span_image=false
+wallpaper_cmd="feh --bg-fill"
+
+locktext="Type your password ..."
+font="JetBrainsMono Nerd Font"
+time_format="%H:%M"
+bgcolor=000000ff
