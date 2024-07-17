@@ -12,7 +12,7 @@ alt + {_,shift + }e
 
 # set the window state
 alt + {t,s,f}
-	bspc node -t {tiled,floating,fullscreen}
+	bspc node -t {tiled,floating,~fullscreen}
 
 # focus the node in the given direction
 alt + {_,shift + }{h,j,k,l}
@@ -41,13 +41,13 @@ super + {Left,Down,Up,Right}
 alt + {_,shift +}Return
 	{kitty, bspc rule -a \* -o state=floating layer=above rectangle=1400x800+260+140 && kitty}
     
-# toggle focus between tiled and floating terminal
-alt + g
-    $HOME/.config/bspwm/scripts/toggle-floating-term.sh
-
 # set floating terminal layout
 super + {1-4} 
     $HOME/.config/bspwm/scripts/floating-layout.sh {1-4} 
+
+# cycle next and previous nodes in a desktop
+alt + {_,shift + }n
+    bspc node -f {next,prev}.local.!hidden.window
 
 alt + d
 	rofi -show drun
