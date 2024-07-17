@@ -7,6 +7,7 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>e", ":Ex<CR>", { noremap = true, silent = true })
 vim.g.user_emmet_leader_key = '<Tab><CR>'
 vim.g.user_emmet_mode = 'i'
+vim.opt.clipboard:append("unnamedplus")
 
 vim.cmd[[colorscheme dracula]]
 vim.cmd('highlight Normal guibg=#000000')
