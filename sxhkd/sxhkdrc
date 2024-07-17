@@ -45,6 +45,10 @@ alt + {_,shift +}Return
 alt + g
     $HOME/.config/bspwm/scripts/toggle-floating-term.sh
 
+# set floating terminal layout
+super + {1-4} 
+    $HOME/.config/bspwm/scripts/floating-layout.sh {1-4} 
+
 alt + d
 	rofi -show drun
 
