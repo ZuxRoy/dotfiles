@@ -1,7 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -154,3 +153,14 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export OPENSSL_ROOT_DIR=/usr/include/openssl
+
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+test -r '/home/zuxroy/.opam/opam-init/init.sh' && . '/home/zuxroy/.opam/opam-init/init.sh' > /dev/null 2> /dev/null || true
+# END opam configuration
+
+[ -f "/home/zuxroy/.ghcup/env" ] && . "/home/zuxroy/.ghcup/env" # ghcup-env
