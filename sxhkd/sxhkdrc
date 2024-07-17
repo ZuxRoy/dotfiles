@@ -10,13 +10,9 @@ super + alt + {q,r}
 alt + {_,shift + }e
 	bspc node '@parent' -R {_,-}90
 
-# alternate between the tiled and monocle layout
-alt + m
-	bspc desktop -l next
-
 # set the window state
-alt + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+alt + {t,s,f}
+	bspc node -t {tiled,floating,fullscreen}
 
 # focus the node in the given direction
 alt + {_,shift + }{h,j,k,l}
@@ -43,7 +39,11 @@ super + {Left,Down,Up,Right}
 
 # standard terminal and dropdown terminal
 alt + {_,shift +}Return
-	{kitty, bspc rule -a \* -o state=floating layer=above rectangle=1915x440+0+0 && kitty}
+	{kitty, bspc rule -a \* -o state=floating layer=above rectangle=1400x800+260+140 && kitty}
+    
+# toggle focus between tiled and floating terminal
+alt + g
+    $HOME/.config/bspwm/scripts/toggle-floating-term.sh
 
 alt + d
 	rofi -show drun
