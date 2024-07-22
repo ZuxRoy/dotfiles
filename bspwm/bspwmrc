@@ -8,7 +8,7 @@ sxhkd &
 dunst &
 compton --config ~/.config/compton/compton.conf &
 
-feh -z --no-fehbg --bg-fill "$HOME/Downloads/purple-jungle.jpg"
+$HOME/.fehbg &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
