@@ -49,6 +49,14 @@ super + {1-4}
 alt + {_,shift + }n
     bspc node -f {next,prev}.local.!hidden.window
 
+# minimize current window
+alt + m
+    bspc node -g hidden
+
+# bring back all minimized windows
+super + m
+    for node in $(bspc query -N -n .hidden); do bspc node $node -g hidden=off; done
+
 alt + d
 	rofi -show drun
 
