@@ -45,6 +45,10 @@ alt + {_,shift +}Return
 super + {1-4} 
     $HOME/.config/bspwm/scripts/floating-layout.sh {1-4} 
 
+# set floating terminal layout back to big
+super + f
+    $HOME/.config/bspwm/scripts/floating-layout-big.sh
+
 # cycle next and previous nodes in a desktop
 alt + {_,shift + }n
     bspc node -f {next,prev}.local.!hidden.window
