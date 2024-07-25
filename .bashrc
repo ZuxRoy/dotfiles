@@ -164,3 +164,9 @@ test -r '/home/zuxroy/.opam/opam-init/init.sh' && . '/home/zuxroy/.opam/opam-ini
 # END opam configuration
 
 [ -f "/home/zuxroy/.ghcup/env" ] && . "/home/zuxroy/.ghcup/env" # ghcup-env
+
+export PATH="$PATH:/opt/apache-maven-3.9.8/bin"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
