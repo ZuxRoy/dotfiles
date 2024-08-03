@@ -170,3 +170,16 @@ export PATH="$PATH:/opt/apache-maven-3.9.8/bin"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+alias practice="tmux new-session -c '$HOME/code/cp/practice'"
+alias contest="tmux new-session -c '$HOME/code/cp/contests'"
+export input="$HOME/code/cp/input.txt"
+export output="$HOME/code/cp/output.txt"
+export sample="$HOME/code/cp/sample.txt"
+
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    eval "$(ssh-agent -s)"
+fi
+ssh-add ~/.ssh/id_ed25519 &>/dev/null
+
+export PATH="$PATH:$(go env GOPATH)/bin"
