@@ -59,7 +59,7 @@ alt + m
 
 # bring back all minimized windows
 super + m
-    for node in $(bspc query -N -n .hidden); do bspc node $node -g hidden=off; done
+    rofi-hidden-windows.sh
 
 alt + d
 	rofi -show drun
