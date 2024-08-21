@@ -1,4 +1,16 @@
+vim.g.mapleader = " "
+
+vim.g.user_emmet_mode = 'i'
+
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 25
+
+vim.opt.clipboard:append("unnamedplus")
+
+vim.opt.cursorline = true
 vim.opt.guicursor = ""
+
+vim.opt.signcolumn = "yes"
 
 vim.opt.nu = true
 vim.opt.relativenumber = true

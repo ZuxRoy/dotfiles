@@ -53,11 +53,9 @@ super + f
 alt + {_,shift + }n
     bspc node -f {next,prev}.local.!hidden.window
 
-# minimize current window
 alt + m
     bspc node -g hidden
 
-# bring back all minimized windows
 super + m
     rofi-hidden-windows.sh
 
@@ -66,9 +64,6 @@ alt + d
 
 alt + q
 	bspc node -c
-
-ctrl + {p,m,d}
-    {charge.sh,memory-noti.sh,date-time-noti.sh}
 
 ctrl + grave
     dunstctl history-pop
@@ -91,5 +86,5 @@ alt + Print
 alt + w
     wifi-rofi.sh
 
-super + p
-    bspc rule -a Wlogout layer=above && wlogout
+#super + p
+#    bspc rule -a Wlogout layer=above && wlogout

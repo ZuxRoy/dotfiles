@@ -9,6 +9,7 @@ esac
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
+export HISTCONTROL=erasedups:ignoredups:ignorespace
 HISTCONTROL=ignoreboth
 HISTIGNORE="pwd:ls:cd"
 
@@ -17,7 +18,7 @@ shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
-HISTFILESIZE=2000
+HISTFILESIZE=10000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -59,15 +60,23 @@ fi
 # Bash Prompt Customization
 if [ "$color_prompt" = yes ]; then
     #base_PS1="\n\[\033[1;31m\] ╭─\[\033[0m\]\[\033[1;41m\]  \h \[\033[0m\]\[\033[1;31m\]\[\033[1;44m\]\[\033[0m\]\[\033[1;44m\]   \W \[\033[0m\]"
-    base_PS1="\[\033[0m\]\[\033[1;34m\]  \033[38;2;0;255;255m\W "
+    #base_PS1="\[\033[0m\]\[\033[1;34m\]  \033[38;2;0;255;255m\w "
+    base_PS1="\[\e[38;2;255;165;0m\]  \e[38;5;123m\e[1m\w\e[0m "
 else 
     #base_PS1="\n\[\033[1;31m\] ╭─\[\033[0m\]\[\033[1;41m\]  \h \[\033[0m\]\[\033[1;31m\]\[\033[1;44m\]\[\033[0m\]\[\033[1;44m\]   \W \[\033[0m\]"
-    base_PS1="\[\033[0m\]\[\033[1;34m\]  \033[38;2;0;255;255m\W "
+    #base_PS1="\[\033[0m\]\[\033[1;34m\]  \033[38;2;0;255;255m\w "
+    base_PS1="\[\e[38;2;255;165;0m\]  \e[38;5;123m\e[1m\w\e[0m "
 fi
 
-PROMPT_COMMAND=find_git
+PROMPT_COMMAND=config_prompt
 
-find_git() {
+config_prompt() {
+    if [ $? -eq 0 ]; then
+        arrow_color="\[\033[38;2;57;255;20m\]"  
+    else
+        arrow_color="\[\033[38;2;255;0;0m\]"
+    fi
+
     git_dir=$(git rev-parse --git-dir 2> /dev/null)
     branch_name=""
     if [ -n "$git_dir" ]; then
@@ -76,10 +85,12 @@ find_git() {
 
     if [ -n "$branch_name" ]; then
         #PS1="$base_PS1\[\033[1;46m\]\[\033[1;34m\]\[\033[0m\]\[\033[1;46m\]\[\033[1;30m\]    $branch_name \[\033[0m\]\[\033[1;36m\]\[\033[0m\]\[\033[1;31m\]\n ╰─ \[\033[0m\]"
-        PS1="$base_PS1  \[\033[1;34m\]   \033[38;2;0;255;255m$branch_name\n\033[38;2;0;255;255m \[\033[0m\]"
+        #PS1="$base_PS1  \[\033[1;34m\]   \033[38;2;0;255;255m$branch_name\n\033[38;2;0;255;255m \[\033[0m\]"
+        PS1="$base_PS1\[\033[0m\]on \[\e[1m\]\[\e[38;5;213m\] $branch_name\n$arrow_color〉\[\033[0m\]"
     else
         #PS1="$base_PS1\[\033[1;34m\]\[\033[0m\]\[\033[1;31m\]\n ╰─ \[\033[0m\]"
-        PS1="$base_PS1\n\033[38;2;0;255;255m \[\033[0m\]"
+        #PS1="$base_PS1\n\033[38;2;0;255;255m \[\033[0m\]"
+        PS1="$base_PS1\n$arrow_color〉\[\033[0m\]"
     fi
 }
 
@@ -135,45 +146,16 @@ if ! shopt -oq posix; then
   fi
 fi
 
-. "$HOME/.cargo/env"
-
 unset FZF_DEFAULT_OPTS
-#export FZF_DEFAULT_OPTS="--preview 'batcat --style=numbers --color=always --line-range :500 {}' --height=40% --layout=reverse --info=inline --border --margin=1 --padding=1"
 
-# autocomplete config
 bind 'set show-all-if-ambiguous on'
 bind 'TAB:menu-complete'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 eval "$(fzf --bash)"
-eval "$(zoxide init bash)"
 
-export PATH="$PATH:/home/zuxroy/balenaEtcher-linux-x64"
 export LC_ALL=en_IN.UTF-8
 export LANG=en_IN.UTF-8
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export OPENSSL_ROOT_DIR=/usr/include/openssl
-
-
-# BEGIN opam configuration
-# This is useful if you're using opam as it adds:
-#   - the correct directories to the PATH
-#   - auto-completion for the opam binary
-# This section can be safely removed at any time if needed.
-test -r '/home/zuxroy/.opam/opam-init/init.sh' && . '/home/zuxroy/.opam/opam-init/init.sh' > /dev/null 2> /dev/null || true
-# END opam configuration
-
-[ -f "/home/zuxroy/.ghcup/env" ] && . "/home/zuxroy/.ghcup/env" # ghcup-env
-
-export PATH="$PATH:/opt/apache-maven-3.9.8/bin"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 alias practice="tmux new-session -c '$HOME/code/cp/practice'"
 alias contest="tmux new-session -c '$HOME/code/cp/contests'"
@@ -181,9 +163,30 @@ export input="$HOME/code/cp/input.txt"
 export output="$HOME/code/cp/output.txt"
 export sample="$HOME/code/cp/sample.txt"
 
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    eval "$(ssh-agent -s)"
-fi
-ssh-add ~/.ssh/id_ed25519 &>/dev/null
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$PATH:/home/zuxroy/fastfetch/build"
+export PATH="$PATH:/home/zuxroy/neovim/build/bin"
+export PATH="$PATH:$HOME/.local/share/nvim/mason/bin"
+export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
 
-export PATH="$PATH:$(go env GOPATH)/bin"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/zuxroy/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/zuxroy/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/zuxroy/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/zuxroy/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+bind -x '"\C-f":/home/zuxroy/.local/bin/tmux-sessionizer.sh'

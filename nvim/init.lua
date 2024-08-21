@@ -1,1 +1,3 @@
-require('zuxroy')
+require("set")
+require("remap")
+require("config.lazy")
