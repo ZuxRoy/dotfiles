@@ -1,7 +1,7 @@
 return {
     'neovim/nvim-lspconfig',
     dependencies = {
-        { 'williamboman/mason.nvim', config = true }, 
+        { 'williamboman/mason.nvim', config = true },
         'williamboman/mason-lspconfig.nvim',
         'WhoIsSethDaniel/mason-tool-installer.nvim',
 
@@ -11,6 +11,13 @@ return {
         'hrsh7th/nvim-cmp',
     },
     config = function()
+        vim.diagnostic.config({
+            virtual_text = true,
+            signs = true,
+            underline = true,
+            update_in_insert = false,
+            severity_sort = true,
+        })
         vim.api.nvim_create_autocmd('LspAttach', {
             group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
             callback = function(event)
@@ -74,6 +81,9 @@ return {
                     Lua = {
                         completion = {
                             callSnippet = 'Replace',
+                        },
+                        diagnostics = {
+                            disable = { "trailing-space" }, 
                         },
                     },
                 },
