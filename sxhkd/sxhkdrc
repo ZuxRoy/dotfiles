@@ -39,7 +39,7 @@ super + {Left,Down,Up,Right}
 
 # standard terminal and dropdown terminal
 alt + {_,shift +}Return
-	{kitty, bspc rule -a \* -o state=floating layer=above rectangle=1400x800+260+140 && kitty}
+	{alacritty, bspc rule -a \* -o state=floating layer=above rectangle=1400x800+260+140 && alacritty}
     
 # set floating terminal layout
 super + {1-4} 

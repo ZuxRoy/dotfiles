@@ -1,0 +1,72 @@
+font:
+  size: 10.0
+
+  bold:
+    family: "JetBrainsMono Nerd Font"
+    style: "Bold"
+
+  bold_italic:
+    family: "JetBrainsMono Nerd Font"
+    style: "Bold Italic"
+
+  italic:
+    family: "JetBrainsMono Nerd Font"
+    style: "Italic"
+
+  normal:
+    family: "JetBrainsMono Nerd Font"
+    style: "Regular"
+
+bell:
+  animation: EaseOutExpo
+  duration: 0
+  color: "0x000000"
+
+window:
+  padding:
+    x: 2
+    y: 2
+  confirm_before_closing: Never
+
+ipc_socket: true
+
+colors:
+  primary:
+    background: '0x000000'
+    foreground: '0xf8f8f2'
+    dim_foreground: '0xbbbbbb'
+    bright_foreground: '0xffffff'
+
+  cursor:
+    text: '0x000000'
+    cursor: '0xf8f8f0'
+
+  normal:
+    black: '0x000000'
+    red: '0xff5555'
+    green: '0x50fa7b'
+    yellow: '0xf1fa8c'
+    blue: '0xbd93f9'
+    magenta: '0xff79c6'
+    cyan: '0x8be9fd'
+    white: '0xbbbbbb'
+
+  bright:
+    black: '0x44475a'
+    red: '0xff6e67'
+    green: '0x5af78e'
+    yellow: '0xf4f99d'
+    blue: '0xcaa9fa'
+    magenta: '0xff92d0'
+    cyan: '0x9aedfe'
+    white: '0xe6e6e6'
+
+  dim:
+    black: '0x000000'
+    red: '0xaa1e1e'
+    green: '0x1eaa1e'
+    yellow: '0xaaaa1e'
+    blue: '0x1e1eaa'
+    magenta: '0xaa1eaa'
+    cyan: '0x1eaaaa'
+    white: '0x666666'
