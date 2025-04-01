@@ -8,6 +8,7 @@ return {
         { 'j-hui/fidget.nvim', opts = {} },
 
         'hrsh7th/cmp-nvim-lsp',
+        'hrsh7th/nvim-cmp',
     },
     config = function()
         vim.api.nvim_create_autocmd('LspAttach', {
@@ -67,7 +68,7 @@ return {
             gopls = {},
             pyright = {},
             rust_analyzer = {},
-            tsserver = {},
+            ts_ls = {},
             lua_ls = {
                 settings = {
                     Lua = {

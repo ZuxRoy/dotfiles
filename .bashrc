@@ -165,7 +165,7 @@ export sample="$HOME/code/cp/sample.txt"
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:/home/zuxroy/fastfetch/build"
-export PATH="$PATH:/home/zuxroy/neovim/build/bin"
+export PATH="$PATH:/home/zuxroy/dev/neovim/build/bin"
 export PATH="$PATH:$HOME/.local/share/nvim/mason/bin"
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
