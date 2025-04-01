@@ -169,6 +169,9 @@ export PATH="$PATH:/home/zuxroy/neovim/build/bin"
 export PATH="$PATH:$HOME/.local/share/nvim/mason/bin"
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:/home/zuxroy/dev/compactc/"
+
+export COMPACT_HOME='/home/zuxroy/dev/compactc/'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -190,3 +193,5 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 bind -x '"\C-f":/home/zuxroy/.local/bin/tmux-sessionizer.sh'
+
+alias ..="cd .."
