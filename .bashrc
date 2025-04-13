@@ -163,6 +163,9 @@ export input="$HOME/code/cp/input.txt"
 export output="$HOME/code/cp/output.txt"
 export sample="$HOME/code/cp/sample.txt"
 
+export ANDROID_HOME="/home/zuxroy/dev/android_sdk"
+export COMPACT_HOME='/home/zuxroy/dev/compactc/'
+
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:/home/zuxroy/fastfetch/build"
 export PATH="$PATH:/home/zuxroy/dev/neovim/build/bin"
@@ -170,8 +173,10 @@ export PATH="$PATH:$HOME/.local/share/nvim/mason/bin"
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:/home/zuxroy/dev/compactc/"
-
-export COMPACT_HOME='/home/zuxroy/dev/compactc/'
+export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin"
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
+export PATH="$PATH:$ANDROID_HOME/build-tools/33.0.1"
+export PATH="$PATH:$ANDROID_HOME/emulator"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
