@@ -45,6 +45,5 @@ vim.api.nvim_set_keymap('i', '<Down>', '<NOP>', { noremap = true, silent = true 
 vim.api.nvim_set_keymap('i', '<Left>', '<NOP>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<Right>', '<NOP>', { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('i', '<leader>p', '<NOP>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<leader>p', '<NOP>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>p', '<NOP>', { noremap = true, silent = true })
