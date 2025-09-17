@@ -197,6 +197,12 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+if [ -d "$HOME/bin" ] ; then
+  PATH="$HOME/bin:$PATH"
+fi
+
+export PHPRC=$HOME/bin/php-latest/lib
+
 bind -x '"\C-f":/home/zuxroy/.local/bin/tmux-sessionizer.sh'
 
 alias ..="cd .."
