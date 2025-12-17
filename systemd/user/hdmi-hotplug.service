@@ -1,0 +1,6 @@
+[Unit]
+Description=HDMI hotplug rofi chooser
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/hdmi-connect.sh
