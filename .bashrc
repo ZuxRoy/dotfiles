@@ -206,3 +206,11 @@ export PHPRC=$HOME/bin/php-latest/lib
 bind -x '"\C-f":/home/zuxroy/.local/bin/tmux-sessionizer.sh'
 
 alias ..="cd .."
+
+# pnpm
+export PNPM_HOME="/home/zuxroy/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
