@@ -76,6 +76,24 @@ return {
             pyright = {},
             rust_analyzer = {},
             ts_ls = {},
+            emmet_ls = {
+                filetypes = {
+                    "html",
+                    "css",
+                    "scss",
+                    "javascript",
+                    "javascriptreact",
+                    "typescript",
+                    "typescriptreact",
+                    "svelte",
+                    "vue",
+                },
+                init_options = {
+                    preferences = {
+                        indentation = "    ", -- 4 spaces
+                    },
+                },
+            },
             lua_ls = {
                 settings = {
                     Lua = {
@@ -83,7 +101,7 @@ return {
                             callSnippet = 'Replace',
                         },
                         diagnostics = {
-                            disable = { "trailing-space" }, 
+                            disable = { "trailing-space" },
                         },
                     },
                 },

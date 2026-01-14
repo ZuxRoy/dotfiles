@@ -31,7 +31,7 @@ vim.opt.wrap = false
 vim.opt.scrolloff = 999
 
 vim.opt.swapfile = false
-vim.opt.backup = false 
+vim.opt.backup = false
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
